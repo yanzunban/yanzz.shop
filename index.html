@@ -1,0 +1,1066 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YANZZSTORE15 — Layanan Digital</title><style>
+:root{
+  --bg:#070b16;
+  --bg2:#0b1020;
+  --card:#101729;
+  --card2:#141c31;
+  --text:#f5f7ff;
+  --muted:#929bb3;
+  --primary:#6d5dfc;
+  --primary2:#8b5cf6;
+  --cyan:#22d3ee;
+  --border:rgba(255,255,255,.08);
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(109,93,252,.16),transparent 30%),
+    radial-gradient(circle at 90% 20%,rgba(34,211,238,.08),transparent 25%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1150px,92%);
+  margin:auto;
+}
+
+/* NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(18px);
+  background:rgba(7,11,22,.78);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:21px;
+  font-weight:800;
+}
+
+.logo-icon{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--primary),var(--cyan));
+  box-shadow:0 8px 25px rgba(109,93,252,.3);
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  color:#b9c0d3;
+  font-size:14px;
+}
+
+.nav-links a:hover{
+  color:#fff;
+}
+
+.nav-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 19px;
+  border-radius:12px;
+  font-weight:700;
+  font-size:14px;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  color:white;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  box-shadow:0 10px 30px rgba(109,93,252,.25);
+}
+
+.btn-outline{
+  background:transparent;
+  border:1px solid var(--border);
+  color:#e8ebf5;
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:26px;
+}
+
+/* HERO */
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:450px;
+  height:450px;
+  border-radius:50%;
+  background:rgba(109,93,252,.16);
+  filter:blur(100px);
+  left:-150px;
+  top:100px;
+}
+
+.hero-content{
+  max-width:780px;
+  text-align:center;
+  margin:auto;
+  position:relative;
+}
+
+.badge{
+  display:inline-flex;
+  padding:7px 14px;
+  border:1px solid rgba(109,93,252,.3);
+  background:rgba(109,93,252,.1);
+  color:#bdb5ff;
+  border-radius:30px;
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-size:clamp(42px,7vw,72px);
+  line-height:1.05;
+  letter-spacing:-3px;
+  margin-bottom:22px;
+}
+
+.gradient{
+  background:linear-gradient(90deg,#8b7cff,#22d3ee);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:650px;
+  margin:auto;
+  font-size:17px;
+}
+
+.hero-buttons{
+  margin-top:32px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.stats{
+  margin-top:55px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.stat{
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,.025);
+}
+
+.stat strong{
+  display:block;
+  font-size:18px;
+}
+
+.stat span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* SECTION */
+section{
+  padding:100px 0;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-label{
+  color:#8f83ff;
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.section-heading h2{
+  font-size:clamp(30px,5vw,44px);
+  margin:8px 0 12px;
+}
+
+.section-heading p{
+  color:var(--muted);
+  max-width:600px;
+  margin:auto;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:linear-gradient(145deg,rgba(20,28,49,.9),rgba(10,15,29,.9));
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:26px;
+  transition:.3s;
+  box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(109,93,252,.35);
+  box-shadow:var(--shadow);
+}
+
+.icon{
+  width:50px;
+  height:50px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  margin-bottom:20px;
+  background:rgba(109,93,252,.13);
+  color:#a79fff;
+  font-size:23px;
+}
+
+.card h3{
+  margin-bottom:9px;
+  font-size:19px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.card-link{
+  display:inline-block;
+  margin-top:18px;
+  color:#9d94ff;
+  font-size:13px;
+  font-weight:700;
+}
+
+.available{
+  display:inline-block;
+  margin-top:17px;
+  color:#4ade80;
+  font-size:12px;
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature{
+  padding:24px;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.025);
+}
+
+.feature-icon{
+  color:#8b7cff;
+  font-size:23px;
+  margin-bottom:12px;
+}
+
+.feature h3{
+  font-size:16px;
+  margin-bottom:5px;
+}
+
+.feature p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* STEPS */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.step{
+  position:relative;
+  text-align:center;
+}
+
+.step-number{
+  width:52px;
+  height:52px;
+  margin:0 auto 18px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  font-weight:800;
+  box-shadow:0 10px 30px rgba(109,93,252,.3);
+}
+
+.step h3{
+  font-size:16px;
+  margin-bottom:7px;
+}
+
+.step p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* TESTIMONIAL */
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.review{
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:rgba(255,255,255,.025);
+}
+
+.review-text{
+  color:#c8cede;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.user{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.avatar{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#6d5dfc,#22d3ee);
+  font-weight:800;
+}
+
+.user strong{
+  display:block;
+  font-size:14px;
+}
+
+.user span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* FAQ */
+.faq{
+  max-width:800px;
+  margin:auto;
+}
+
+.faq-item{
+  border-bottom:1px solid var(--border);
+}
+
+.faq-question{
+  width:100%;
+  padding:22px 4px;
+  background:none;
+  border:0;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  text-align:left;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:700;
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  color:var(--muted);
+  font-size:14px;
+  transition:max-height .3s,padding .3s;
+}
+
+.faq-item.active .faq-answer{
+  max-height:180px;
+  padding:0 4px 20px;
+}
+
+.plus{
+  transition:.3s;
+}
+
+.faq-item.active .plus{
+  transform:rotate(45deg);
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  padding:80px 30px;
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(139,92,246,.25),transparent 55%),
+    linear-gradient(145deg,#111a32,#0b1121);
+  border:1px solid var(--border);
+}
+
+.cta h2{
+  font-size:clamp(30px,5vw,45px);
+  margin:10px 0;
+}
+
+.cta p{
+  color:var(--muted);
+  max-width:580px;
+  margin:0 auto 28px;
+}
+
+/* FOOTER */
+footer{
+  padding:70px 0 25px;
+  border-top:1px solid var(--border);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:50px;
+}
+
+.footer-brand p{
+  color:var(--muted);
+  font-size:14px;
+  max-width:420px;
+  margin-top:14px;
+}
+
+.footer-col h4{
+  margin-bottom:15px;
+  font-size:14px;
+}
+
+.footer-col a{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  margin:9px 0;
+}
+
+.footer-col a:hover{
+  color:white;
+}
+
+.copyright{
+  margin-top:50px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+  color:#687187;
+  text-align:center;
+  font-size:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{
+    display:none;
+    position:absolute;
+    left:4%;
+    right:4%;
+    top:72px;
+    flex-direction:column;
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:#0c1222;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .nav-buttons{
+    display:none;
+  }
+
+  .services,
+  .features,
+  .testimonials{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .steps{
+    grid-template-columns:repeat(2,1fr);
+    row-gap:45px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  section{
+    padding:70px 0;
+  }
+
+  .hero{
+    min-height:620px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .services,
+  .features,
+  .testimonials,
+  .steps,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    gap:30px;
+  }
+}
+</style></head><body><!-- NAVBAR --><nav class="navbar">
+  <div class="container nav-inner"><a href="#" class="logo">
+  <span class="logo-icon">Y</span>
+  YANZZSTORE15
+</a>
+
+<div class="nav-links" id="navLinks">
+  <a href="#home">Beranda</a>
+  <a href="#layanan">Semua Layanan</a>
+  <a href="#faq">FAQ</a>
+  <a href="#kontak">Support</a>
+</div>
+
+<div class="nav-buttons">
+  <a href="#" class="btn btn-outline">Masuk</a>
+  <a href="#" class="btn btn-primary">Daftar Gratis</a>
+</div>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  </div>
+</nav><!-- HERO --><section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">  <div class="badge">
+    ⚡ Layanan Digital Cepat & Otomatis
+  </div>
+
+  <h1>
+    Selamat Datang Di
+    <span class="gradient">YANZZSTORE15</span>
+  </h1>
+
+  <p>
+    Penyedia Panel Pterodactyl, Bot WhatsApp, Nomor Virtual,
+    Suntik Sosmed, aplikasi premium, dan berbagai kebutuhan
+    digital lainnya.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#layanan" class="btn btn-primary">
+      🛒 Belanja Sekarang
+    </a>
+
+    <a href="#layanan" class="btn btn-outline">
+      Pelajari Selengkapnya
+    </a>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <strong>🔒 Aman</strong>
+      <span>Transaksi Aman</span>
+    </div>
+
+    <div class="stat">
+      <strong>⚡ Instan</strong>
+      <span>Proses Cepat</span>
+    </div>
+
+    <div class="stat">
+      <strong>24/7</strong>
+      <span>Support</span>
+    </div>
+
+    <div class="stat">
+      <strong>1.7K+</strong>
+      <span>Layanan</span>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- SERVICES --><section id="layanan">
+  <div class="container"><div class="section-heading">
+  <div class="section-label">Layanan Kami</div>
+  <h2>Semua Layanan Digital Ada di Sini</h2>
+  <p>
+    Pilih layanan yang kamu butuhkan, semua tersedia
+    dalam satu platform.
+  </p>
+</div>
+
+<div class="services">
+
+  <div class="card">
+    <div class="icon">🖥️</div>
+    <h3>Panel Pterodactyl</h3>
+    <p>
+      Hosting server game profesional dengan performa tinggi,
+      dashboard modern, dan uptime yang stabil.
+    </p>
+    <a href="#" class="card-link">Lihat Detail →</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">📱</div>
+    <h3>Nomor Virtual</h3>
+    <p>
+      Nomor virtual dari berbagai negara untuk kebutuhan
+      verifikasi OTP.
+    </p>
+    <span class="available">● Tersedia Sekarang</span>
+  </div>
+
+  <div class="card">
+    <div class="icon">💎</div>
+    <h3>APK Premium</h3>
+    <p>
+      Berbagai aplikasi premium seperti CapCut, Canva,
+      Spotify, Netflix, YouTube dan lainnya.
+    </p>
+    <a href="#" class="card-link">Lihat Semua Produk →</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">📈</div>
+    <h3>Suntik Sosmed</h3>
+    <p>
+      Followers, likes, dan views untuk Instagram,
+      TikTok, YouTube, Telegram dan platform lainnya.
+    </p>
+    <a href="#" class="card-link">Lihat Detail →</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">💳</div>
+    <h3>Deposit Saldo</h3>
+    <p>
+      Isi saldo dengan mudah melalui QRIS dan berbagai
+      metode pembayaran lainnya.
+    </p>
+    <a href="#" class="card-link">Deposit Sekarang →</a>
+  </div>
+
+  <div class="card">
+    <div class="icon">🤖</div>
+    <h3>Produk Digital Otomatis</h3>
+    <p>
+      Script bot, produk digital, dan berbagai kebutuhan
+      digital yang dikirim otomatis.
+    </p>
+    <span class="available">● Tersedia Sekarang</span>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- FEATURES --><section>
+  <div class="container"><div class="section-heading">
+  <div class="section-label">Kenapa Kami?</div>
+  <h2>Keunggulan yang Membedakan</h2>
+  <p>
+    Kami berkomitmen memberikan layanan digital terbaik
+    dengan standar kualitas tinggi.
+  </p>
+</div>
+
+<div class="features">
+
+  <div class="feature">
+    <div class="feature-icon">✦</div>
+    <h3>1700+ Layanan Tersedia</h3>
+    <p>Beragam pilihan layanan digital dengan harga kompetitif.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">⚡</div>
+    <h3>Proses Super Cepat</h3>
+    <p>Sistem otomatis 24/7 tanpa perlu menunggu admin.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">🔐</div>
+    <h3>Aman & Terpercaya</h3>
+    <p>Keamanan transaksi selalu menjadi prioritas.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">💬</div>
+    <h3>Support Siap Bantu</h3>
+    <p>Tim support responsif untuk membantu kendala pengguna.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">🔄</div>
+    <h3>Update Berkala</h3>
+    <p>Layanan terus diperbarui dengan fitur terbaru.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">💰</div>
+    <h3>Harga Hemat</h3>
+    <p>Harga transparan tanpa biaya tersembunyi.</p>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- STEPS --><section>
+  <div class="container"><div class="section-heading">
+  <div class="section-label">Cara Kerja</div>
+  <h2>4 Langkah Mudah</h2>
+  <p>Mulai gunakan layanan kami dalam hitungan menit.</p>
+</div>
+
+<div class="steps">
+
+  <div class="step">
+    <div class="step-number">1</div>
+    <h3>Buat Akun</h3>
+    <p>Daftar gratis dan verifikasi akun.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-number">2</div>
+    <h3>Isi Saldo</h3>
+    <p>Top up saldo via QRIS atau metode pembayaran lain.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-number">3</div>
+    <h3>Pilih Layanan</h3>
+    <p>Pilih layanan dari berbagai opsi yang tersedia.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-number">4</div>
+    <h3>Selesai!</h3>
+    <p>Pesanan diproses otomatis.</p>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- TESTIMONIAL --><section>
+  <div class="container"><div class="section-heading">
+  <div class="section-label">Ulasan Pengguna</div>
+  <h2>Kata Mereka Tentang Kami</h2>
+</div>
+
+<div class="testimonials">
+
+  <div class="review">
+    <p class="review-text">
+      "Nokosnya cepet banget, OTP langsung masuk.
+      Harga juga worth it banget!"
+    </p>
+
+    <div class="user">
+      <div class="avatar">A</div>
+      <div>
+        <strong>Aldi P.</strong>
+        <span>Game Dev</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="review">
+    <p class="review-text">
+      "Proses deposit cepat, panel pterodactyl
+      mudah dipakai. Mantap!"
+    </p>
+
+    <div class="user">
+      <div class="avatar">R</div>
+      <div>
+        <strong>Rizka N.</strong>
+        <span>Bot Developer</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="review">
+    <p class="review-text">
+      "Harganya paling murah yang pernah ketemu.
+      Udah langganan dari bulan lalu."
+    </p>
+
+    <div class="user">
+      <div class="avatar">F</div>
+      <div>
+        <strong>Fajar S.</strong>
+        <span>Reseller</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- FAQ --><section id="faq">
+  <div class="container"><div class="section-heading">
+  <div class="section-label">FAQ</div>
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+</div>
+
+<div class="faq">
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Apa itu layanan Nokos / Nomor Virtual?
+      <span class="plus">+</span>
+    </button>
+    <div class="faq-answer">
+      Nokos atau Nomor Virtual adalah nomor telepon sementara
+      yang digunakan untuk menerima SMS verifikasi (OTP).
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Bagaimana cara deposit saldo?
+      <span class="plus">+</span>
+    </button>
+    <div class="faq-answer">
+      Setelah login, kunjungi halaman Deposit, pilih nominal
+      saldo kemudian lakukan pembayaran melalui metode yang tersedia.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Saldo sudah bayar tapi belum masuk?
+      <span class="plus">+</span>
+    </button>
+    <div class="faq-answer">
+      Tunggu beberapa menit karena saldo dapat diproses otomatis.
+      Jika belum masuk, hubungi support dan sertakan bukti pembayaran.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      OTP tidak kunjung datang?
+      <span class="plus">+</span>
+    </button>
+    <div class="faq-answer">
+      Jika OTP tidak diterima sebelum waktu habis, transaksi
+      dapat dibatalkan sesuai ketentuan layanan.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Apakah layanan ini aman digunakan?
+      <span class="plus">+</span>
+    </button>
+    <div class="faq-answer">
+      Gunakan layanan sesuai aturan platform yang berlaku.
+      Pastikan setiap layanan digunakan secara bertanggung jawab.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Bagaimana garansi akun APK Premium?
+      <span class="plus">+</span>
+    </button>
+    <div class="faq-answer">
+      Garansi mengikuti ketentuan produk masing-masing.
+      Hubungi support jika mengalami kendala teknis.
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section><!-- CTA --><section id="kontak">
+  <div class="container"><div class="cta">
+  <div class="section-label">Mulai Sekarang</div>
+
+  <h2>Siap Menggunakan Layanan Digital?</h2>
+
+  <p>
+    Daftar sekarang dan mulai nikmati berbagai layanan
+    digital dari YANZZSTORE15.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#" class="btn btn-primary">
+      Daftar Gratis
+    </a>
+
+    <a href="#" class="btn btn-outline">
+      💬 Hubungi Admin
+    </a>
+  </div>
+</div>
+
+  </div>
+</section><!-- FOOTER --><footer>
+  <div class="container"><div class="footer-grid">
+
+  <div class="footer-brand">
+    <div class="logo">
+      <span class="logo-icon">Y</span>
+      YANZZSTORE15
+    </div>
+
+    <p>
+      Penyedia layanan digital, panel, nomor virtual,
+      aplikasi premium, dan berbagai produk digital lainnya.
+    </p>
+  </div>
+
+  <div class="footer-col">
+    <h4>Produk</h4>
+    <a href="#">APK Premium</a>
+    <a href="#">Nomor Virtual</a>
+    <a href="#">Suntik Sosmed</a>
+    <a href="#">Panel Pterodactyl</a>
+  </div>
+
+  <div class="footer-col">
+    <h4>Bantuan</h4>
+    <a href="#faq">FAQ</a>
+    <a href="#kontak">Hubungi Kami</a>
+    <a href="#">Cek Transaksi</a>
+  </div>
+
+</div>
+
+<div class="copyright">
+  © 2026 YANZZSTORE15. All rights reserved.
+</div>
+
+  </div>
+</footer><script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+
+    const item = button.parentElement;
+
+    document.querySelectorAll(".faq-item").forEach(other => {
+      if(other !== item){
+        other.classList.remove("active");
+      }
+    });
+
+    item.classList.toggle("active");
+  });
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navLinks").classList.remove("active");
+  });
+});
+</script></body>
+</html>
